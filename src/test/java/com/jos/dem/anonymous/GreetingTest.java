@@ -11,7 +11,7 @@ public class GreetingTest {
 
   @Test
   @DisplayName("Should show get message as anonymous class")
-  void shouldGetMessage() {
+  void shouldGetMessageWithAnonymous() {
     final String message = greetingService.call(new Greeting() {
       @Override
       public String hello() {
@@ -21,5 +21,16 @@ public class GreetingTest {
 
     assertEquals("Hello World!", message);
   }
+
+  @Test
+  @DisplayName("Should remove method name")
+  void shouldGetMessageWithoutMethodName() {
+    final String message = greetingService.call(() -> {
+        return "Hello World!";
+    });
+
+    assertEquals("Hello World!", message);
+  }
+
 
 }

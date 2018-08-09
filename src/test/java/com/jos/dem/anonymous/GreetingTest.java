@@ -10,7 +10,7 @@ public class GreetingTest {
   private GreetingService greetingService = new HelloWorld();
 
   @Test
-  @DisplayName("Should show how we can use lambdas in a test")
+  @DisplayName("Should show get message as anonymous class")
   void shouldGetMessage() {
     final String message = greetingService.call(new Greeting() {
       @Override

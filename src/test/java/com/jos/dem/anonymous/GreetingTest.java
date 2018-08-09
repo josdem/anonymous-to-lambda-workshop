@@ -34,7 +34,7 @@ public class GreetingTest {
 
   @Test
   @DisplayName("Should remove return statement")
-  void shouldGetMessageWithoutMethodName() {
+  void shouldGetMessageWithoutReturnStatement() {
     final String message = greetingService.call(() -> "Hello World!");
     assertEquals("Hello World!", message);
   }
